@@ -1,0 +1,30 @@
+html,
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #364a63;
+  line-height: 1.6;
+}
+
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+}
+
+.disabled,
+:disabled {
+  background: #eee !important;
+  border: 1px solid #eee !important;
+  color: #fff !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+iframe {
+  width: 100%;
+}
