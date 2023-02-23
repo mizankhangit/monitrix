@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ForgotPassword = () => {
   return (
     <div className="grid place-items-center h-screen ">
-      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-8">
+      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-0">
         <div className="w-[240px] h-[60px] mb-6">
           <img
             src="/images/logo.png"

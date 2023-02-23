@@ -3,7 +3,6 @@ import useAuth from "../../../../hooks/useAuth";
 
 export const PublicLayout = () => {
   const auth = useAuth();
-
   return !auth ? <Outlet /> : <Navigate to="/dashboard" />;
 };
 

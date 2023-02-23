@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
+  const [passwordType, setPasswordType] = useState("password");
   return (
     <div className="grid place-items-center h-screen ">
-      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-8">
+      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-0">
         <div className="w-[240px] h-[60px] mb-6">
           <img
             src="/images/logo.png"
             alt="logo"
-            className="w-full h-full object-cover	"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="border w-full py-10 px-5 md:px-8 rounded">
@@ -23,7 +25,7 @@ const Login = () => {
                 htmlFor="email"
                 className="mb-1 inline-block text-sm font-medium"
               >
-                Email or Username
+                Email or Username <span className="text-danger">*</span>
               </label>
               <input
                 type="email"
@@ -39,7 +41,7 @@ const Login = () => {
                   htmlFor="password"
                   className="mb-1 inline-block text-sm font-medium"
                 >
-                  Password
+                  Password <span className="text-danger">*</span>
                 </label>
                 <Link
                   to="/forgot-password"
@@ -48,13 +50,30 @@ const Login = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-                className="input_field"
-              />
+              <div className="relative">
+                <input
+                  type={passwordType}
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  className="input_field"
+                />
+                <div
+                  className="eye_icons"
+                  onClick={() =>
+                    setPasswordType(
+                      passwordType == "password" ? "text" : "password"
+                    )
+                  }
+                >
+                  {passwordType === "password" && (
+                    <AiOutlineEyeInvisible className="text-xl" />
+                  )}
+                  {passwordType === "text" && (
+                    <AiOutlineEye className="text-xl" />
+                  )}
+                </div>
+              </div>
             </div>
             <button type="submit" className="btn btn-primary w-full mt-6">
               Sign In
@@ -63,7 +82,7 @@ const Login = () => {
           <div className="flex justify-center items-center">
             <p className="pt-6 text-sm">
               New on our platform?{" "}
-              <Link to="/login" className="hover:text-secondary">
+              <Link to="/register" className="hover:text-secondary">
                 Create an account
               </Link>
             </p>

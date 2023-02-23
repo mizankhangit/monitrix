@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Verification = () => {
   return (
     <div className="grid place-items-center h-screen ">
-      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-8">
+      <div className="flex flex-col justify-center items-center max-w-[480px] w-full mx-auto px-5 md:px-0">
         <div className="w-[240px] h-[60px] mb-6">
           <img
             src="/images/logo.png"
@@ -18,7 +18,7 @@ const Verification = () => {
             <p>
               We sent a verification code to{" "}
               <Link to="#" className="hover:text-secondary">
-                Email
+                Email.
               </Link>{" "}
               Enter the code from the email in the field below.
             </p>
