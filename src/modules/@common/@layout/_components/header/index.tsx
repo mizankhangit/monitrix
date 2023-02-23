@@ -79,7 +79,7 @@ const items: MenuProps["items"] = [
 
 export const Header = () => {
   return (
-    <header className="border-b bg-[#f5f6fa;]">
+    <header className="border-b bg-[#f5f6fa] sticky top-0 z-50">
       <div className="container">
         <div className="flex items-center justify-between">
           <div className="left">
@@ -104,7 +104,7 @@ export const Header = () => {
                 >
                   <a onClick={(e) => e.preventDefault()}>
                     <Space>
-                      <AiOutlineUser />
+                      <AiOutlineUser className="text-white" />
                     </Space>
                   </a>
                 </Dropdown>

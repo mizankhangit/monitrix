@@ -21,6 +21,32 @@
   }
 }
 
+.bell_icon {
+  margin-top: 8px;
+  border-top: 3px solid #0b3a5d;
+  border-radius: 4px;
+  ul {
+    width: 350px;
+    padding: 0px !important;
+    border-radius: 4px !important;
+    li {
+      padding: 14px 28px !important;
+    }
+    .ant-dropdown-menu-item-divider {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+}
+
 .profile_dropdown > ul li:nth-child(1) {
   background-color: #f5f6fa !important;
+}
+
+.popover_body {
+  border-top: 3px solid #0b3a5d;
+  border-radius: 4px !important;
+  .ant-popover-inner {
+    padding: 0;
+  }
 }
