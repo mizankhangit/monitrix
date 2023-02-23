@@ -11,9 +11,9 @@ import "./styles/main.scss";
 
 const antTheme = {
   token: {
-    colorPrimary: "#AC224D",
-    fontFamily: "Rubik, sans-serif",
-    colorTextBase: "#808291",
+    colorPrimary: "#0B3A5D",
+    fontFamily: "Roboto, sans-serif",
+    colorTextBase: "#364a63",
   },
 };
 

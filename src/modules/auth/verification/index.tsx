@@ -23,7 +23,7 @@ const Verification = () => {
               Enter the code from the email in the field below.
             </p>
           </div>
-          <form action="">
+          <form action="" className="form">
             <div className="mt-3">
               <label
                 htmlFor="email"

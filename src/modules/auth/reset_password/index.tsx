@@ -18,9 +18,8 @@ const ResetPassword = () => {
         <div className="border w-full py-10 px-5 md:px-8 rounded">
           <div className="mb-5">
             <h4 className="text-2xl font-bold">Reset Password</h4>
-            <p>for</p>
           </div>
-          <form action="">
+          <form action="" className="form">
             <div className="mt-4">
               <label
                 htmlFor="password"
@@ -36,6 +35,7 @@ const ResetPassword = () => {
                   placeholder="New Password"
                   className="input_field"
                 />
+
                 <div
                   className="eye_icons"
                   onClick={() =>
@@ -54,10 +54,11 @@ const ResetPassword = () => {
                   </div>
                 </div>
               </div>
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
               <label
-                htmlFor="password"
+                htmlFor="confirmPassword"
                 className="mb-1 inline-block text-sm font-medium"
               >
                 Confirm Password <span className="text-danger">*</span>
@@ -66,7 +67,7 @@ const ResetPassword = () => {
                 <input
                   type={confirmPasswordType}
                   name="confirm password"
-                  id="password"
+                  id="confirmPassword"
                   placeholder="Confirm Password"
                   className="input_field"
                 />
@@ -86,6 +87,7 @@ const ResetPassword = () => {
                   )}
                 </div>
               </div>
+              <div className="error">This field is required</div>
             </div>
             <button type="submit" className="btn btn-primary w-full mt-6">
               Set New Password

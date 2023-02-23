@@ -20,7 +20,7 @@ const Register = () => {
             <h4 className="text-2xl font-bold mb-2">Register</h4>
             <p>Create New Monitrix Account</p>
           </div>
-          <form action="">
+          <form action="" className="form">
             <div>
               <label htmlFor="name" className="input-label">
                 Name <span className="text-danger">*</span>
@@ -35,10 +35,7 @@ const Register = () => {
               <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label
-                htmlFor="email"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="email" className="input-label">
                 Email or Username <span className="text-danger">*</span>
               </label>
               <input
@@ -48,12 +45,10 @@ const Register = () => {
                 placeholder="info@softnio.com"
                 className="input_field"
               />
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label
-                htmlFor="mobileNumber"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="mobileNumber" className="input-label">
                 Mobile Number <span className="text-danger">*</span>
               </label>
               <input
@@ -63,12 +58,10 @@ const Register = () => {
                 placeholder="Enter Your Mobile Number"
                 className="input_field"
               />
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label
-                htmlFor="password"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="password" className="input-label">
                 Password <span className="text-danger">*</span>
               </label>
               <div className="relative">
@@ -79,6 +72,7 @@ const Register = () => {
                   placeholder="Password"
                   className="input_field"
                 />
+
                 <div
                   className="eye_icons"
                   onClick={() => {
@@ -95,12 +89,10 @@ const Register = () => {
                   )}
                 </div>
               </div>
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label
-                htmlFor="confirmPassword"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="confirmPassword" className="input-label">
                 Confirm Password <span className="text-danger">*</span>
               </label>
               <div className="relative">
@@ -111,6 +103,7 @@ const Register = () => {
                   placeholder="Confirm Password"
                   className="input_field"
                 />
+
                 <div
                   className="eye_icons"
                   onClick={() =>
@@ -127,6 +120,7 @@ const Register = () => {
                   )}
                 </div>
               </div>
+              <div className="error">This field is required</div>
             </div>
             <button type="submit" className="btn btn-primary w-full mt-6">
               Register

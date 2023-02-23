@@ -19,12 +19,9 @@ const Login = () => {
             <h4 className="text-2xl font-bold mb-2">Sign-In</h4>
             <p>Access Monitrix using your email and password.</p>
           </div>
-          <form action="">
+          <form action="" className="form">
             <div className="mt-4">
-              <label
-                htmlFor="email"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="email" className="input-label">
                 Email or Username <span className="text-danger">*</span>
               </label>
               <input
@@ -34,13 +31,11 @@ const Login = () => {
                 placeholder="info@softnio.com"
                 className="input_field"
               />
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
               <div className="flex justify-between items-center">
-                <label
-                  htmlFor="password"
-                  className="mb-1 inline-block text-sm font-medium"
-                >
+                <label htmlFor="password" className="input-label">
                   Password <span className="text-danger">*</span>
                 </label>
                 <Link
@@ -74,6 +69,7 @@ const Login = () => {
                   )}
                 </div>
               </div>
+              <div className="error">This field is required</div>
             </div>
             <button type="submit" className="btn btn-primary w-full mt-6">
               Sign In
