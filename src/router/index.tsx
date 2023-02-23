@@ -1,6 +1,12 @@
 import { Spin } from "antd";
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import Register from "../modules/auth/register";
+import Success from "../modules/auth/forgot_password";
+import ForgotPassword from "../modules/auth/forgot_password";
+import Verification from "../modules/auth/verification";
+import ResetPassword from "../modules/auth/reset_password";
+import PublicLayout from "../modules/@common/@layout/public";
 
 // outlet
 
@@ -21,12 +27,16 @@ const AppRouter = () => {
       }
     >
       <Routes>
-        {/* <Route path="/" element={<PublicOutlet />}> */}
+        {/* <Route path="/" element={<PublicLayout />}> */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/verification" element={<Verification />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/verification" element={<Verification />} /> </Route> */}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        {/* 
+         
+          <Route path="/" element={<Navigate to="/login" replace />} /> */}
+        {/* </Route> */}
 
         <Route path="*" element={<NotFound />} />
       </Routes>
