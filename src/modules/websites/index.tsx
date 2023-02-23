@@ -1,4 +1,4 @@
-export const Website = () => {
+export const Websites = () => {
   return (
     <div>
       website
@@ -8,4 +8,4 @@ export const Website = () => {
   );
 };
 
-export default Website;
+export default Websites;

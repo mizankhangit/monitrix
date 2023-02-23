@@ -9,7 +9,7 @@ import ResetPassword from "../modules/auth/reset_password";
 import PublicLayout from "../modules/@common/@layout/public";
 import PrivateLayout from "../modules/@common/@layout/private";
 import Dashboard from "../modules/dashboard";
-import Website from "../modules/website";
+import Websites from "../modules/websites";
 
 // outlet
 
@@ -43,7 +43,7 @@ const AppRouter = () => {
 
         <Route path="/" element={<PrivateLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/website" element={<Website />} />
+          <Route path="/websites" element={<Websites />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
