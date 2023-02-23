@@ -7,7 +7,7 @@ export const PrivateLayout = () => {
   const { collapseSidebar } = useProSidebar();
 
   return (
-    <div>
+    <>
       <Header />
       <div className="min-h-screen">
         <div className="container">
@@ -21,7 +21,7 @@ export const PrivateLayout = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

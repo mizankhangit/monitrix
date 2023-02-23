@@ -2,13 +2,12 @@
   padding: 4px 9px;
 }
 
-.profile_dropdown,
-.bell_icon {
+.profile_dropdown {
   margin-top: 8px;
   border-top: 3px solid #0b3a5d;
   border-radius: 4px;
   ul {
-    min-width: 280px;
+    width: 280px;
     padding: 0px !important;
     border-radius: 4px !important;
 
@@ -24,8 +23,4 @@
 
 .profile_dropdown > ul li:nth-child(1) {
   background-color: #f5f6fa !important;
-}
-
-.bell_icon {
-  background-color: #e5e9f2;
 }
