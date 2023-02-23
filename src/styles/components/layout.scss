@@ -1,0 +1,12 @@
+.page_wrapper {
+  height: calc(100vh - 65px);
+  overflow: auto;
+}
+.sidebar_wrapper {
+  height: calc(100vh - 65px);
+  overflow: auto;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}

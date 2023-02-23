@@ -8,6 +8,7 @@ import type { MenuProps } from "antd";
 import { Button, Dropdown, message, Space, Tooltip } from "antd";
 import { Link } from "react-router-dom";
 import NotificaionIcon from "../notification_icon";
+import { CgMenu } from "react-icons/cg";
 
 const items: MenuProps["items"] = [
   {
@@ -79,36 +80,35 @@ const items: MenuProps["items"] = [
 
 export const Header = () => {
   return (
-    <header className="border-b bg-[#f5f6fa] sticky top-0 z-50">
+    <header className="border-b bg-[#f5f6fa] sticky top-0 z-50 h-[65px] flex items-center">
       <div className="container">
         <div className="flex items-center justify-between">
-          <div className="left">
-            <div className="w-[144px] ">
-              <img
-                src="/images/logo.png"
-                alt="logo"
-                className="w-full h-full object-cover	"
-              />
-            </div>
-          </div>
-          <div className="right">
-            <div className="flex items-center justify-center gap-3">
-              <NotificaionIcon />
+          <button className="text-2xl block lg:hidden">
+            <CgMenu />
+          </button>
 
-              <div className="w-[34px] h-[34px] flex bg-primary text-white items-center justify-center rounded-full cursor-pointer">
-                <Dropdown
-                  menu={{ items }}
-                  trigger={["click"]}
-                  placement="bottomRight"
-                  overlayClassName="profile_dropdown"
-                >
-                  <a onClick={(e) => e.preventDefault()}>
-                    <Space>
-                      <AiOutlineUser className="text-white" />
-                    </Space>
-                  </a>
-                </Dropdown>
-              </div>
+          <div className="w-[144px] ">
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              className="w-full h-full object-cover	"
+            />
+          </div>
+          <div className="flex items-center justify-center gap-3">
+            <NotificaionIcon />
+            <div className="w-[34px] h-[34px] flex bg-primary text-white items-center justify-center rounded-full cursor-pointer">
+              <Dropdown
+                menu={{ items }}
+                trigger={["click"]}
+                placement="bottomRight"
+                overlayClassName="profile_dropdown"
+              >
+                <a onClick={(e) => e.preventDefault()}>
+                  <Space>
+                    <AiOutlineUser className="text-white" />
+                  </Space>
+                </a>
+              </Dropdown>
             </div>
           </div>
         </div>
