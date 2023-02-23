@@ -9,7 +9,7 @@ import { FaExchangeAlt } from "react-icons/fa";
 
 export const SidebarComponent = () => {
   return (
-    <Sidebar breakPoint={"lg"} backgroundColor="#fff">
+    <Sidebar breakPoint={"lg"} backgroundColor="#fff" style={{ border: 0 }}>
       <Menu>
         <div className="mb-6">
           <div className="text-sm font-medium text-primary">DASHBOARDS</div>
