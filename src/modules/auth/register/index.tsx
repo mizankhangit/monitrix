@@ -22,10 +22,7 @@ const Register = () => {
           </div>
           <form action="">
             <div>
-              <label
-                htmlFor="name"
-                className="mb-1 inline-block text-sm font-medium"
-              >
+              <label htmlFor="name" className="input-label">
                 Name <span className="text-danger">*</span>
               </label>
               <input
@@ -35,6 +32,7 @@ const Register = () => {
                 placeholder="Enter Your Name"
                 className="input_field"
               />
+              <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
               <label

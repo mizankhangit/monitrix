@@ -29,3 +29,10 @@
     @apply text-[44px] font-[600];
   }
 }
+
+.error {
+  @apply text-danger text-xs;
+}
+.input-label {
+  @apply mb-1 inline-block text-sm font-medium;
+}
