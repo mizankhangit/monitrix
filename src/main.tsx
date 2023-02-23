@@ -1,4 +1,5 @@
 import React from "react";
+import { ProSidebarProvider } from "react-pro-sidebar";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
@@ -22,7 +23,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <ConfigProvider theme={antTheme}>
       <BrowserRouter>
         <Provider store={store}>
-          <AppRouter />
+          <ProSidebarProvider>
+            <AppRouter />
+          </ProSidebarProvider>
         </Provider>
       </BrowserRouter>
     </ConfigProvider>
