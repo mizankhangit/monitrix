@@ -7,6 +7,9 @@ import ForgotPassword from "../modules/auth/forgot_password";
 import Verification from "../modules/auth/verification";
 import ResetPassword from "../modules/auth/reset_password";
 import PublicLayout from "../modules/@common/@layout/public";
+import PrivateLayout from "../modules/@common/@layout/private";
+import Dashboard from "../modules/dashboard";
+import Website from "../modules/website";
 
 // outlet
 
@@ -37,6 +40,11 @@ const AppRouter = () => {
          
           <Route path="/" element={<Navigate to="/login" replace />} /> */}
         {/* </Route> */}
+
+        <Route path="/" element={<PrivateLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/website" element={<Website />} />
+        </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
