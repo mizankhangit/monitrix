@@ -21,7 +21,7 @@ const Login = () => {
           </div>
           <form action="" className="form">
             <div className="mt-4">
-              <label htmlFor="email" className="input-label">
+              <label htmlFor="email" className="input_label">
                 Email or Username <span className="text-danger">*</span>
               </label>
               <input
@@ -35,7 +35,7 @@ const Login = () => {
             </div>
             <div className="mt-4">
               <div className="flex justify-between items-center">
-                <label htmlFor="password" className="input-label">
+                <label htmlFor="password" className="input_label">
                   Password <span className="text-danger">*</span>
                 </label>
                 <Link

@@ -22,11 +22,11 @@ const Register = () => {
           </div>
           <form action="" className="form">
             <div>
-              <label htmlFor="name" className="input-label">
+              <label htmlFor="name" className="input_label">
                 Name <span className="text-danger">*</span>
               </label>
               <input
-                type="name"
+                type="text"
                 name="name"
                 id="name"
                 placeholder="Enter Your Name"
@@ -35,7 +35,7 @@ const Register = () => {
               <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label htmlFor="email" className="input-label">
+              <label htmlFor="email" className="input_label">
                 Email or Username <span className="text-danger">*</span>
               </label>
               <input
@@ -48,7 +48,7 @@ const Register = () => {
               <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label htmlFor="mobileNumber" className="input-label">
+              <label htmlFor="mobileNumber" className="input_label">
                 Mobile Number <span className="text-danger">*</span>
               </label>
               <input
@@ -61,7 +61,7 @@ const Register = () => {
               <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label htmlFor="password" className="input-label">
+              <label htmlFor="password" className="input_label">
                 Password <span className="text-danger">*</span>
               </label>
               <div className="relative">
@@ -92,7 +92,7 @@ const Register = () => {
               <div className="error">This field is required</div>
             </div>
             <div className="mt-4">
-              <label htmlFor="confirmPassword" className="input-label">
+              <label htmlFor="confirmPassword" className="input_label">
                 Confirm Password <span className="text-danger">*</span>
               </label>
               <div className="relative">

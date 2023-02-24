@@ -60,3 +60,39 @@
 .custom_drawer .ant-drawer-extra {
   display: none;
 }
+
+.ant-table-thead > tr > th {
+  background-color: #e2e5f0 !important;
+}
+.ant-table-container table > thead > tr:first-child > *:first-child,
+.ant-table-container table > thead > tr:first-child > *:last-child {
+  border-start-start-radius: 0px !important;
+  border-start-end-radius: 0px !important;
+}
+
+.ant-table.ant-table-middle .ant-table-thead > tr > th,
+.ant-table.ant-table-middle .ant-table-tbody > tr > td {
+  padding: 12px 8px 12px 20px !important;
+}
+
+.ant-table-pagination-right {
+  padding: 10px 20px !important;
+}
+
+.ant-table-thead > tr > th::before {
+  display: none !important;
+}
+.ant-select-selector {
+  border-radius: 4px !important;
+  border: 1px solid #e5e7eb !important;
+  &:hover {
+    border: 1px solid #e5e7eb !important;
+  }
+  &:focus-visible {
+    outline-color: none !important;
+  }
+}
+.ant-select-selection-item {
+  font-size: 14px;
+  color: #9ca3af;
+}

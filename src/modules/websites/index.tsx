@@ -1,11 +1,130 @@
-import { Button, Drawer, DrawerProps, RadioChangeEvent, Space } from "antd";
+import {
+  Button,
+  Drawer,
+  DrawerProps,
+  RadioChangeEvent,
+  Space,
+  TabsProps,
+  DataTable,
+  Tabs,
+  Select,
+} from "antd";
 import { FiDownloadCloud, FiFilter } from "react-icons/fi";
 import { MdWeb } from "react-icons/md";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Table, { ColumnsType } from "antd/es/table";
+import moment from "moment";
+import websiteData from "../../_fakeData/websiteData.json";
+import Register from "../auth/register";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { AiOutlineClockCircle } from "react-icons/ai";
+
+const columns: ColumnsType<any> = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    render: (_, record) => (
+      <Link to={`${record?.url}`}>
+        <div className="flex justify-start items-center gap-2">
+          <div className="bg-grey rounded-full p-1">
+            <div className="flex justify-start items-center w-[40px] h-[40px] shrink-0">
+              <img
+                className="w-full h-full object-contain	 rounded-full"
+                src={record?.imgSrc}
+                alt={record?.name}
+                title={record?.name}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <span className="whitespace-nowrap">{record?.name}</span>
+            <span className="whitespace-nowrap text-xs">{record?.url}</span>
+          </div>
+        </div>
+      </Link>
+    ),
+  },
+  {
+    title: "Location",
+    dataIndex: "Location",
+    key: "location",
+    render: (_, record) => {
+      return (
+        <div className="flex justify-start items-center gap-2">
+          <div className="flex justify-start items-center w-[30px] h-[30px] shrink-0">
+            <img
+              className="w-full h-full object-contain"
+              src={record?.flag}
+              alt={record?.name}
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <span className="whitespace-nowrap text-sm font-medium">
+              {record?.location}
+            </span>
+          </div>
+        </div>
+      );
+    },
+  },
+  {
+    title: "Last Check",
+    dataIndex: "Last Check",
+    key: "Last Check",
+    render: (_, record) => {
+      return (
+        <div className="flex justify-start items-center gap-2">
+          <div>
+            <AiOutlineClockCircle className="text-lg" />
+          </div>
+
+          <div className="flex flex-col">
+            <span className="whitespace-nowrap text-sm font-medium">
+              {record?.lastCheck}
+            </span>
+          </div>
+        </div>
+      );
+    },
+  },
+  {
+    title: "Load Time",
+    dataIndex: "Load Time",
+    key: "Load Time",
+    render: (_, record) => {
+      return <div>{record?.daysLeft}</div>;
+    },
+  },
+
+  {
+    title: "Action",
+    dataIndex: "Action",
+    key: "action",
+    render: (_, record) => {
+      return (
+        <div className="inline-flex justify-center items-center w-[40px] h-[40px] rounded-full hover:bg-zinc-200 cursor-pointer transition-all duration-300">
+          <BiDotsHorizontalRounded className="text-xl " />
+        </div>
+      );
+    },
+  },
+];
 
 export const Websites = () => {
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("right");
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+  const [msg, setMsg] = useState("New");
+  // const { data, isLoading } = useGetFilteredWinnersQuery({
+  //   page: page,
+  //   limit: limit,
+  //   filter: filter,
+  // });
+  // const dataArray = data?.results;
 
   const showDrawer = () => {
     setOpen(true);
@@ -14,6 +133,28 @@ export const Websites = () => {
   const onClose = () => {
     setOpen(false);
   };
+  // Input Field for workspace
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
+
+  const paginationOptions = {
+    showSizeChanger: true,
+    showQuickJumper: true,
+    defaultPageSize: limit,
+    current: page,
+    onChange: (page: any) => {
+      setPage(page);
+    },
+    onShowSizeChange: (_: any, showItem: any) => {
+      setLimit(showItem);
+    },
+    pageSizeOptions: [10, 20, 30, 50],
+    // total: data?.totalItems,
+    showTotal: (total: number, range: any) =>
+      `${range[0]} to ${range[1]} of ${total}`,
+  };
+
   return (
     <div>
       <div className="mb-4">
@@ -43,7 +184,7 @@ export const Websites = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center my-4">
         <div className="flex items-center gap-6 py-6">
           <div className="bg-teal-400 rounded">
             <p className="text-[11px] font-medium px-2 py-[2px] text-white ">
@@ -85,6 +226,23 @@ export const Websites = () => {
           </button>
         </div>
       </div>
+
+      <div className="border rounded">
+        <div className="overflow-auto">
+          <Table
+            rowKey={`campaignId subscriberId`}
+            size="middle"
+            dataSource={websiteData}
+            columns={columns}
+            // loading={isLoading}
+            pagination={paginationOptions}
+            rowClassName={(record, index) =>
+              index % 2 === 0 ? "bg-[#F8F8F9]" : "bg-[#fff]"
+            }
+          />
+        </div>
+      </div>
+
       <Drawer
         title="Website"
         className="custom_drawer"
@@ -101,9 +259,118 @@ export const Websites = () => {
           </Space>
         }
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div>
+          <Tabs
+            defaultActiveKey="1"
+            items={[
+              {
+                label: <div className="font-medium">Website Information</div>,
+                key: "1",
+                children: (
+                  <div className="grid grid-cols-2 gap-5 mt-5">
+                    <div>
+                      <div className="mb-4">
+                        <label htmlFor="name" className="input_label">
+                          Website Name <span className="text-danger">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="Enter Website Name"
+                          className="input_field"
+                        />
+                        <div className="error">This field is required</div>
+                      </div>
+                      <div className="mb-4">
+                        <label htmlFor="name" className="input_label">
+                          URL <span className="text-danger">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="url"
+                          id="name"
+                          placeholder="https://www.my-website.com"
+                          className="input_field"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="name" className="input_label">
+                          Search string (Optional){" "}
+                        </label>
+                        <input
+                          type="text"
+                          name="url"
+                          id="name"
+                          placeholder="Google Analytics Object"
+                          className="input_field"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="mb-4">
+                        <label htmlFor="country" className="input_label ">
+                          Location <span className="text-danger">*</span>
+                        </label>
+
+                        <Select
+                          defaultValue="Select Country"
+                          style={{ width: "100%" }}
+                          allowClear
+                          size="large"
+                          options={[
+                            { value: "bangladesh", label: "Bangladesh" },
+                            { value: "india", label: "India" },
+                          ]}
+                        />
+                        <div className="error">This field is required</div>
+                      </div>
+                      <div className="mb-4">
+                        <label htmlFor="country" className="input_label ">
+                          Workspace <span className="text-danger">*</span>
+                        </label>
+
+                        <Select
+                          defaultValue="Select workspace"
+                          style={{ width: "100%" }}
+                          onChange={handleChange}
+                          size="large"
+                          options={[
+                            { value: "workspace1", label: "Workspace 1" },
+                            { value: "workspace2", label: "Workspace 2" },
+                            { value: "workspace3", label: "Workspace 3" },
+                          ]}
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label htmlFor="country" className="input_label ">
+                          Delay Duration <span className="text-danger">*</span>
+                        </label>
+
+                        <Select
+                          defaultValue="5 min"
+                          style={{ width: "100%" }}
+                          onChange={handleChange}
+                          size="large"
+                          options={[
+                            { value: "5min", label: "5 min" },
+                            { value: "10min", label: "10 min" },
+                            { value: "15min", label: "15 min" },
+                          ]}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: <div className="font-medium">Adjust Alerts</div>,
+                key: "2",
+                children: "Tab 2",
+              },
+            ]}
+          />
+        </div>
       </Drawer>
     </div>
   );

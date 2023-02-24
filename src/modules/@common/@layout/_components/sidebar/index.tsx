@@ -32,7 +32,7 @@ export const SidebarComponent = () => {
           </MenuItem>
           <MenuItem
             className="inline-flex items-center"
-            component={<Link to="/websites" />}
+            component={<Link to="/domains" />}
             icon={<FiGlobe className="text-xl" />}
           >
             <span className="text-base font-medium">Domains</span>

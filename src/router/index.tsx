@@ -10,6 +10,7 @@ import PublicLayout from "../modules/@common/@layout/public";
 import PrivateLayout from "../modules/@common/@layout/private";
 import Dashboard from "../modules/dashboard";
 import Websites from "../modules/websites";
+import Domains from "../modules/domains";
 
 // outlet
 
@@ -44,6 +45,7 @@ const AppRouter = () => {
         <Route path="/" element={<PrivateLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/websites" element={<Websites />} />
+          <Route path="/domains" element={<Domains />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
