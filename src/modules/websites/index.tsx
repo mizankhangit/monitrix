@@ -5,7 +5,6 @@ import {
   RadioChangeEvent,
   Space,
   TabsProps,
-  DataTable,
   Tabs,
   Select,
 } from "antd";
