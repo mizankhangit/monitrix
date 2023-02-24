@@ -50,3 +50,13 @@
     padding: 0;
   }
 }
+
+.custom_drawer .ant-drawer-header-title {
+  button {
+    display: flex !important;
+    order: 1 !important;
+  }
+}
+.custom_drawer .ant-drawer-extra {
+  display: none;
+}

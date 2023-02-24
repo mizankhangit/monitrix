@@ -19,7 +19,7 @@ export const Websites = () => {
       <div className="mb-4">
         <div className="flex justify-start items-center gap-3">
           <MdWeb className="text-[28px]" />
-          <div className="text-[28px] font-medium">Website</div>
+          <div className="text-[28px] font-medium text-primary">Website</div>
         </div>
         <p>You have total 2,595 website.</p>
       </div>

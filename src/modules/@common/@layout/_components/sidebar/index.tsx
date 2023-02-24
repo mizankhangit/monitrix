@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import { FiGlobe } from "react-icons/fi";
-import { BsShieldFillCheck } from "react-icons/bs";
+import { BsShieldCheck } from "react-icons/bs";
 import { SiSpringsecurity } from "react-icons/si";
 import { FaExchangeAlt } from "react-icons/fa";
 
@@ -40,7 +40,7 @@ export const SidebarComponent = () => {
           <MenuItem
             className="inline-flex items-center"
             component={<Link to="/websites" />}
-            icon={<BsShieldFillCheck className="text-xl" />}
+            icon={<BsShieldCheck className="text-xl" />}
           >
             <span className="text-base font-medium">SSL</span>
           </MenuItem>
