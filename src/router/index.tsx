@@ -17,7 +17,7 @@ import SettingsTeam from "../modules/settings/team";
 import SettingsWorkspace from "../modules/settings/workspace";
 import SSL from "../modules/ssl";
 import SubscriptionsLimit from "../modules/subscriptions/limit";
-import SubscriptionsLog from "../modules/subscriptions/logs";
+import SubscriptionsLog from "../modules/subscriptions/log";
 import Subscriptions from "../modules/subscriptions/my";
 import Websites from "../modules/websites";
 
