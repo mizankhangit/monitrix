@@ -4,7 +4,7 @@ import { BiBell } from "react-icons/bi";
 import { TbCornerDownLeft, TbCornerDownRight } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
-export const NotificaionIcon = () => {
+export const NotificaionDropdown = () => {
   const Nofification = () => {
     return (
       <div className="w-[350px]">
@@ -120,4 +120,4 @@ export const NotificaionIcon = () => {
   );
 };
 
-export default NotificaionIcon;
+export default NotificaionDropdown;

@@ -31,16 +31,13 @@ const AppRouter = () => {
       }
     >
       <Routes>
-        {/* <Route path="/" element={<PublicLayout />}> */}
-        <Route path="/register" element={<Register />} />
-        <Route path="/verification" element={<Verification />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        {/* 
-         
-          <Route path="/" element={<Navigate to="/login" replace />} /> */}
-        {/* </Route> */}
+        <Route path="/" element={<PublicLayout />}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/verification" element={<Verification />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+        </Route>
 
         <Route path="/" element={<PrivateLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />

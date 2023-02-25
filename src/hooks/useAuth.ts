@@ -1,5 +1,5 @@
 const useAuth = () => {
-  return true;
+  return false;
 };
 
 export default useAuth;
