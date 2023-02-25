@@ -4,7 +4,7 @@ import Header from "../_components/header";
 import SidebarComponent from "../_components/sidebar";
 
 export const PrivateLayout = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <>

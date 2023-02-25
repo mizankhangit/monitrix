@@ -45,7 +45,11 @@ export const Header = () => {
       </header>
       {width <= 1024 && (
         <Drawer
-          title="Basic Drawer"
+          title={
+            <div className="max-w-[144px] mt-[-6px]">
+              <img src="/images/logo.png" alt="logo" />
+            </div>
+          }
           placement="left"
           onClose={onClose}
           open={open}

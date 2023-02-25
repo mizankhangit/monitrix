@@ -1,4 +1,18 @@
 .ps-menu-button {
   padding-left: 0 !important;
   padding-right: 0 !important;
+  height: 44px !important;
+  transition: all 0.3s;
+  color: #8094ae !important;
+  &:hover {
+    background-color: #fff !important;
+    color: #f1583e !important;
+  }
+}
+
+.ps-submenu-content {
+  .ps-menu-button {
+    padding-left: 45px !important;
+    height: 35px !important;
+  }
 }
