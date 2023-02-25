@@ -11,6 +11,16 @@ import PrivateLayout from "../modules/@common/@layout/private";
 import Dashboard from "../modules/dashboard";
 import Websites from "../modules/websites";
 import Domains from "../modules/domains";
+import SSL from "../modules/ssl";
+import Blacklist from "../modules/blacklist";
+import IntegrationsMy from "../modules/integrations/my";
+import IntegrationsAvailable from "../modules/integrations/available";
+import SubscriptionsLog from "../modules/subscriptions/logs";
+import SubscriptionsLimit from "../modules/subscriptions/limit";
+import Subscriptions from "../modules/subscriptions/my";
+import Incidents from "../modules/incidents";
+import SettingsWorkspace from "../modules/settings/workspace";
+import SettingsTeam from "../modules/settings/team";
 
 // outlet
 
@@ -43,6 +53,20 @@ const AppRouter = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/websites" element={<Websites />} />
           <Route path="/domains" element={<Domains />} />
+          <Route path="/ssl" element={<SSL />} />
+          <Route path="/blacklist" element={<Blacklist />} />
+          <Route path="/integrations" element={<IntegrationsMy />} />
+          <Route
+            path="/integrations/available"
+            element={<IntegrationsAvailable />}
+          />
+          <Route path="/incidents" element={<Incidents />} />
+          <Route path="/subscriptions" element={<Subscriptions />} />
+          <Route path="/subscriptions/log" element={<SubscriptionsLog />} />
+          <Route path="/subscriptions/limit" element={<SubscriptionsLimit />} />
+
+          <Route path="/settings/workspace" element={<SettingsWorkspace />} />
+          <Route path="/settings/team" element={<SettingsTeam />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
