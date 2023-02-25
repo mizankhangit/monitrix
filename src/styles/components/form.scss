@@ -8,3 +8,13 @@
 input::placeholder {
   font-size: 13px !important;
 }
+
+// Blacklist 50 Provider
+
+.provider_search_icon {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+}

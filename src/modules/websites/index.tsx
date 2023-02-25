@@ -13,8 +13,15 @@ import {
   InputNumber,
   Checkbox,
   Modal,
+  Divider,
 } from "antd";
-import { FiDownloadCloud, FiFilter } from "react-icons/fi";
+import {
+  FiDownloadCloud,
+  FiFilter,
+  FiUser,
+  FiUsers,
+  FiX,
+} from "react-icons/fi";
 import { MdWeb } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -27,6 +34,7 @@ import { AiOutlineClockCircle, AiOutlinePlus } from "react-icons/ai";
 import { HiPlus } from "react-icons/hi";
 import { SliderMarks } from "antd/es/slider";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
+import FormTeam from "../@common/form/team";
 
 const columns: ColumnsType<any> = [
   {
@@ -484,15 +492,20 @@ export const Websites = () => {
                 </div>
               </div>
               <Modal
-                title="Basic Modal"
+                title={
+                  <div className="flex items-center gap-2 px-6 py-4 border-b">
+                    <FiUsers />
+                    <span>Add Team Member</span>
+                  </div>
+                }
                 open={isModalOpen}
                 onOk={handleOk}
                 onCancel={handleCancel}
                 footer={false}
               >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <div className="px-6 py-4">
+                  <FormTeam />
+                </div>
               </Modal>
             </div>
           </div>
