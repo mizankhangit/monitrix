@@ -10,3 +10,18 @@
   top: 0;
   flex-shrink: 0;
 }
+
+@media (min-width: 1024px) {
+  .sidebar_wrapper::-webkit-scrollbar {
+    width: 4px;
+    overflow: visible;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .sidebar_wrapper::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .sidebar_wrapper:hover::-webkit-scrollbar-thumb {
+    background: #cacaca;
+  }
+}

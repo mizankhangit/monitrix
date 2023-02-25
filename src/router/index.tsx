@@ -13,6 +13,7 @@ import Domains from "../modules/domains";
 import Incidents from "../modules/incidents";
 import IntegrationsAvailable from "../modules/integrations/available";
 import IntegrationsMy from "../modules/integrations/my";
+import SettingsProfile from "../modules/settings/profile";
 import SettingsTeam from "../modules/settings/team";
 import SettingsWorkspace from "../modules/settings/workspace";
 import SSL from "../modules/ssl";
@@ -64,6 +65,7 @@ const AppRouter = () => {
           <Route path="/subscriptions/log" element={<SubscriptionsLog />} />
           <Route path="/subscriptions/limit" element={<SubscriptionsLimit />} />
 
+          <Route path="/settings/profile" element={<SettingsProfile />} />
           <Route path="/settings/workspace" element={<SettingsWorkspace />} />
           <Route path="/settings/team" element={<SettingsTeam />} />
         </Route>

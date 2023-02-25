@@ -4,8 +4,14 @@
   height: 44px !important;
   transition: all 0.3s;
   color: #8094ae !important;
+
   &:hover {
     background-color: #fff !important;
+    color: #f1583e !important;
+  }
+}
+.active > {
+  .ps-menu-button {
     color: #f1583e !important;
   }
 }
@@ -14,5 +20,14 @@
   .ps-menu-button {
     padding-left: 45px !important;
     height: 35px !important;
+  }
+}
+.ps-submenu-expand-icon {
+  padding-right: 4px !important;
+  span {
+    width: 7px !important;
+    height: 7px !important;
+    border-right: 1px solid currentcolor !important;
+    border-bottom: 1px solid currentcolor !important;
   }
 }
