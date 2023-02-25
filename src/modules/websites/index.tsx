@@ -7,6 +7,12 @@ import {
   TabsProps,
   Tabs,
   Select,
+  Row,
+  Col,
+  Slider,
+  InputNumber,
+  Checkbox,
+  Modal,
 } from "antd";
 import { FiDownloadCloud, FiFilter } from "react-icons/fi";
 import { MdWeb } from "react-icons/md";
@@ -17,7 +23,10 @@ import moment from "moment";
 import websiteData from "../../_fakeData/websiteData.json";
 import Register from "../auth/register";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle, AiOutlinePlus } from "react-icons/ai";
+import { HiPlus } from "react-icons/hi";
+import { SliderMarks } from "antd/es/slider";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const columns: ColumnsType<any> = [
   {
@@ -137,6 +146,8 @@ export const Websites = () => {
     console.log(`selected ${value}`);
   };
 
+  // Pagination
+
   const paginationOptions = {
     showSizeChanger: true,
     showQuickJumper: true,
@@ -152,6 +163,58 @@ export const Websites = () => {
     // total: data?.totalItems,
     showTotal: (total: number, range: any) =>
       `${range[0]} to ${range[1]} of ${total}`,
+  };
+
+  //Slider
+
+  const [inputValue, setInputValue] = useState(1);
+
+  const onChange = (newValue: number) => {
+    setInputValue(newValue);
+  };
+  const marks: SliderMarks = {
+    0: {
+      style: {
+        margin: "8px 0px",
+      },
+      label: <strong>0s</strong>,
+    },
+
+    120: {
+      style: {
+        margin: "8px 0px",
+      },
+      label: <strong>120s</strong>,
+    },
+    240: {
+      style: {
+        color: "#f50",
+        margin: "8px 0px",
+      },
+      label: <strong>240s</strong>,
+    },
+  };
+
+  // checkbox
+
+  const onCheckboxChange = (e: CheckboxChangeEvent) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
+  // Modal
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -249,126 +312,199 @@ export const Websites = () => {
         width={700}
         onClose={onClose}
         open={open}
-        extra={
-          <Space>
-            <Button onClick={onClose}>Cancel</Button>
-            <Button type="primary" onClick={onClose}>
-              OK
-            </Button>
-          </Space>
-        }
       >
         <div>
-          <Tabs
-            defaultActiveKey="1"
-            items={[
-              {
-                label: <div className="font-medium">Website Information</div>,
-                key: "1",
-                children: (
-                  <div className="grid grid-cols-2 gap-5 mt-5">
-                    <div>
-                      <div className="mb-4">
-                        <label htmlFor="name" className="input_label">
-                          Website Name <span className="text-danger">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Enter Website Name"
-                          className="input_field"
-                        />
-                        <div className="error">This field is required</div>
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="name" className="input_label">
-                          URL <span className="text-danger">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          name="url"
-                          id="name"
-                          placeholder="https://www.my-website.com"
-                          className="input_field"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="name" className="input_label">
-                          Search string (Optional){" "}
-                        </label>
-                        <input
-                          type="text"
-                          name="url"
-                          id="name"
-                          placeholder="Google Analytics Object"
-                          className="input_field"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="mb-4">
-                        <label htmlFor="country" className="input_label ">
-                          Location <span className="text-danger">*</span>
-                        </label>
+          <h4 className="font-medium text-base">Website Information</h4>
+          <div className="grid grid-cols-2 gap-5 mt-5">
+            <div>
+              <div className="mb-4">
+                <label htmlFor="name" className="input_label">
+                  Website Name <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter Website Name"
+                  className="input_field"
+                />
+                <div className="error">This field is required</div>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="name" className="input_label">
+                  URL <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="url"
+                  id="name"
+                  placeholder="https://www.my-website.com"
+                  className="input_field"
+                />
+              </div>
+              <div>
+                <label htmlFor="name" className="input_label">
+                  Search String
+                </label>
+                <input
+                  type="text"
+                  name="url"
+                  id="name"
+                  placeholder="Google Analytics Object"
+                  className="input_field"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mb-4">
+                <label htmlFor="country" className="input_label ">
+                  Location <span className="text-danger">*</span>
+                </label>
 
-                        <Select
-                          defaultValue="Select Country"
-                          style={{ width: "100%" }}
-                          allowClear
-                          size="large"
-                          options={[
-                            { value: "bangladesh", label: "Bangladesh" },
-                            { value: "india", label: "India" },
-                          ]}
-                        />
-                        <div className="error">This field is required</div>
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="country" className="input_label ">
-                          Workspace <span className="text-danger">*</span>
-                        </label>
+                <Select
+                  defaultValue="Select Country"
+                  style={{ width: "100%" }}
+                  allowClear
+                  size="large"
+                  options={[
+                    { value: "bangladesh", label: "Bangladesh" },
+                    { value: "india", label: "India" },
+                  ]}
+                />
+                <div className="error">This field is required</div>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="country" className="input_label ">
+                  Workspace <span className="text-danger">*</span>
+                </label>
 
-                        <Select
-                          defaultValue="Select workspace"
-                          style={{ width: "100%" }}
-                          onChange={handleChange}
-                          size="large"
-                          options={[
-                            { value: "workspace1", label: "Workspace 1" },
-                            { value: "workspace2", label: "Workspace 2" },
-                            { value: "workspace3", label: "Workspace 3" },
-                          ]}
-                        />
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="country" className="input_label ">
-                          Delay Duration <span className="text-danger">*</span>
-                        </label>
+                <Select
+                  defaultValue="Select workspace"
+                  style={{ width: "100%" }}
+                  onChange={handleChange}
+                  size="large"
+                  options={[
+                    { value: "workspace1", label: "Workspace 1" },
+                    { value: "workspace2", label: "Workspace 2" },
+                    { value: "workspace3", label: "Workspace 3" },
+                  ]}
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="country" className="input_label ">
+                  Delay Duration <span className="text-danger">*</span>
+                </label>
 
-                        <Select
-                          defaultValue="5 min"
-                          style={{ width: "100%" }}
-                          onChange={handleChange}
-                          size="large"
-                          options={[
-                            { value: "5min", label: "5 min" },
-                            { value: "10min", label: "10 min" },
-                            { value: "15min", label: "15 min" },
-                          ]}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                label: <div className="font-medium">Adjust Alerts</div>,
-                key: "2",
-                children: "Tab 2",
-              },
-            ]}
-          />
+                <Select
+                  defaultValue="5 min"
+                  style={{ width: "100%" }}
+                  onChange={handleChange}
+                  size="large"
+                  options={[
+                    { value: "5min", label: "5 min" },
+                    { value: "10min", label: "10 min" },
+                    { value: "15min", label: "15 min" },
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+          <h4 className="font-medium text-base mt-2">Adjust Alert</h4>
+          <div className="mt-5">
+            <div>
+              <h4 className="input_label">Load time is/or greater to</h4>
+              <div className="mb-4 grid  grid-cols-[1fr_auto] gap-6">
+                <div>
+                  <Slider
+                    min={1}
+                    max={240}
+                    onChange={onChange}
+                    marks={marks}
+                    defaultValue={37}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                  />
+                </div>
+                <div>
+                  <InputNumber
+                    min={1}
+                    max={240}
+                    value={inputValue}
+                    dots={true}
+                    onChange={onChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="Occurrences" className="input_label">
+                Occurrences
+              </label>
+              <input
+                type="text"
+                name="Occurrences"
+                id="occurrences"
+                placeholder="Occurrences"
+                className="input_field"
+              />
+            </div>
+            <div className="mb-4">
+              <Checkbox onChange={onCheckboxChange}>
+                <span className="input_label">Search String Missing</span>
+              </Checkbox>
+            </div>
+            <div>
+              <div className="mb-4">
+                <div className="flex justify-between">
+                  <label htmlFor="country" className="input_label ">
+                    Team Member
+                  </label>
+                  <button
+                    type="button"
+                    onClick={showModal}
+                    className="flex text-sm justify-center items-center gap-1 text-blue-600 font-medium hover:text-primary hover:transition-all"
+                  >
+                    <HiPlus />
+                    <span>Add New</span>
+                  </button>
+                </div>
+
+                <Select
+                  defaultValue="Add Team Member"
+                  style={{ width: "100%" }}
+                  onChange={handleChange}
+                  size="large"
+                  options={[
+                    { value: "mizan", label: "Mizan" },
+                    { value: "mokter", label: "Mokter" },
+                    { value: "mokter2", label: "Mokter 2" },
+                  ]}
+                />
+                <div className="mt-1 text-grey text-xs">
+                  Only verified team members is displayed.
+                </div>
+              </div>
+              <Modal
+                title="Basic Modal"
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer={false}
+              >
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+              </Modal>
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-4 mt-5">
+            <button type="button" className="btn btn-white">
+              Cancel
+            </button>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
         </div>
       </Drawer>
     </div>

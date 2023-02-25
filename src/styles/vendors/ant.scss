@@ -51,14 +51,8 @@
   }
 }
 
-.custom_drawer .ant-drawer-header-title {
-  button {
-    display: flex !important;
-    order: 1 !important;
-  }
-}
-.custom_drawer .ant-drawer-extra {
-  display: none;
+.ant-drawer-header-title {
+  flex-direction: row-reverse;
 }
 
 .ant-table-thead > tr > th {
@@ -93,6 +87,9 @@
   }
 }
 .ant-select-selection-item {
-  font-size: 14px;
-  color: #9ca3af;
+  font-size: 13px !important;
+  color: #9ca3af !important;
+}
+.ant-select-dropdown {
+  border-radius: 4px !important;
 }
