@@ -14,7 +14,7 @@ export const Header = () => {
     setOpen(true);
   };
 
-  const onClose = () => {
+  const closeDrawer = () => {
     setOpen(false);
   };
 
@@ -29,7 +29,7 @@ export const Header = () => {
               </button>
             )}
 
-            <div className="w-[144px] ">
+            <div className="w-[144px] mt-[-12px]">
               <img
                 src="/images/logo.png"
                 alt="logo"
@@ -45,16 +45,23 @@ export const Header = () => {
       </header>
       {width <= 1024 && (
         <Drawer
+          contentWrapperStyle={{
+            maxWidth: "360px",
+            width: "calc(100% - 20px)",
+          }}
           title={
             <div className="max-w-[144px] mt-[-6px]">
               <img src="/images/logo.png" alt="logo" />
             </div>
           }
           placement="left"
-          onClose={onClose}
+          onClose={closeDrawer}
           open={open}
         >
-          <SidebarComponent className="sidebar_mobile" />
+          <SidebarComponent
+            closeDrawer={closeDrawer}
+            className="sidebar_mobile"
+          />
         </Drawer>
       )}
     </>
