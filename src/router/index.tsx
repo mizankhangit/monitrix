@@ -1,26 +1,25 @@
 import { Spin } from "antd";
 import { lazy, Suspense } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import Register from "../modules/auth/register";
-import Success from "../modules/auth/forgot_password";
-import ForgotPassword from "../modules/auth/forgot_password";
-import Verification from "../modules/auth/verification";
-import ResetPassword from "../modules/auth/reset_password";
-import PublicLayout from "../modules/@common/@layout/public";
+import { Route, Routes } from "react-router-dom";
 import PrivateLayout from "../modules/@common/@layout/private";
-import Dashboard from "../modules/dashboard";
-import Websites from "../modules/websites";
-import Domains from "../modules/domains";
-import SSL from "../modules/ssl";
+import PublicLayout from "../modules/@common/@layout/public";
+import ForgotPassword from "../modules/auth/forgot_password";
+import Register from "../modules/auth/register";
+import ResetPassword from "../modules/auth/reset_password";
+import Verification from "../modules/auth/verification";
 import Blacklist from "../modules/blacklist";
-import IntegrationsMy from "../modules/integrations/my";
-import IntegrationsAvailable from "../modules/integrations/available";
-import SubscriptionsLog from "../modules/subscriptions/logs";
-import SubscriptionsLimit from "../modules/subscriptions/limit";
-import Subscriptions from "../modules/subscriptions/my";
+import Dashboard from "../modules/dashboard";
+import Domains from "../modules/domains";
 import Incidents from "../modules/incidents";
-import SettingsWorkspace from "../modules/settings/workspace";
+import IntegrationsAvailable from "../modules/integrations/available";
+import IntegrationsMy from "../modules/integrations/my";
 import SettingsTeam from "../modules/settings/team";
+import SettingsWorkspace from "../modules/settings/workspace";
+import SSL from "../modules/ssl";
+import SubscriptionsLimit from "../modules/subscriptions/limit";
+import SubscriptionsLog from "../modules/subscriptions/logs";
+import Subscriptions from "../modules/subscriptions/my";
+import Websites from "../modules/websites";
 
 // outlet
 
