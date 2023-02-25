@@ -10,12 +10,12 @@ import { HiPlus } from "react-icons/hi";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 
-const FormTeam = () => {
+const FormTeam = ({ closeModal }: any) => {
   // checkbox
-
   const onChange = (e: CheckboxChangeEvent) => {
     console.log(`checked = ${e.target.checked}`);
   };
+
   return (
     <>
       <form>
@@ -99,6 +99,9 @@ const FormTeam = () => {
           <Checkbox onChange={onChange}>Delete</Checkbox>
         </div>
         <div className="flex justify-end gap-4 mt-5">
+          <button onClick={closeModal} type="button" className="btn btn-white">
+            Cancel
+          </button>
           <button type="button" className="btn btn-primary">
             Create
           </button>

@@ -146,7 +146,7 @@ export const Websites = () => {
     setOpen(true);
   };
 
-  const onClose = () => {
+  const closeDrawer = () => {
     setOpen(false);
   };
   // Input Field for workspace
@@ -210,23 +210,16 @@ export const Websites = () => {
   };
 
   // Modal
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const showModal = () => {
     setIsModalOpen(true);
   };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
+  const closeModal = () => {
     setIsModalOpen(false);
   };
 
   return (
-    <div>
+    <>
       <div className="mb-4">
         <div className="flex justify-start items-center gap-3">
           <MdWeb className="text-[28px]" />
@@ -297,6 +290,7 @@ export const Websites = () => {
         </div>
       </div>
 
+      {/* table */}
       <div className="border rounded">
         <div className="overflow-auto">
           <Table
@@ -315,15 +309,14 @@ export const Websites = () => {
 
       <Drawer
         title="Website"
-        className="custom_drawer"
         placement={"right"}
-        width={700}
-        onClose={onClose}
+        contentWrapperStyle={{ maxWidth: "700px", width: "calc(100% - 20px)" }}
+        onClose={closeDrawer}
         open={open}
       >
         <div>
           <h4 className="font-medium text-base">Website Information</h4>
-          <div className="grid grid-cols-2 gap-5 mt-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
             <div>
               <div className="mb-4">
                 <label htmlFor="name" className="input_label">
@@ -421,7 +414,7 @@ export const Websites = () => {
           <div className="mt-5">
             <div>
               <h4 className="input_label">Load time is/or greater to</h4>
-              <div className="mb-4 grid  grid-cols-[1fr_auto] gap-6">
+              <div className="mb-4 grid grid-cols-[1fr_auto] gap-6">
                 <div>
                   <Slider
                     min={1}
@@ -491,27 +484,15 @@ export const Websites = () => {
                   Only verified team members is displayed.
                 </div>
               </div>
-              <Modal
-                title={
-                  <div className="flex items-center gap-2 px-6 py-4 border-b">
-                    <FiUsers />
-                    <span>Add Team Member</span>
-                  </div>
-                }
-                open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
-                footer={false}
-              >
-                <div className="px-6 py-4">
-                  <FormTeam />
-                </div>
-              </Modal>
             </div>
           </div>
 
           <div className="flex justify-end gap-4 mt-5">
-            <button type="button" className="btn btn-white">
+            <button
+              onClick={closeDrawer}
+              type="button"
+              className="btn btn-white"
+            >
               Cancel
             </button>
             <button type="submit" className="btn btn-primary">
@@ -520,7 +501,24 @@ export const Websites = () => {
           </div>
         </div>
       </Drawer>
-    </div>
+
+      <Modal
+        title={
+          <div className="flex items-center gap-2 px-6 py-4 border-b">
+            <FiUsers />
+            <span>Add Team Member</span>
+          </div>
+        }
+        open={isModalOpen}
+        onOk={showModal}
+        onCancel={closeModal}
+        footer={false}
+      >
+        <div className="px-6 py-4">
+          <FormTeam closeModal={closeModal} />
+        </div>
+      </Modal>
+    </>
   );
 };
 
