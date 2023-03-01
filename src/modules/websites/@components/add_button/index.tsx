@@ -194,7 +194,7 @@ const AddButton = () => {
                     min={1}
                     max={240}
                     value={inputValue}
-                    onChange={onChange}
+                    onChange={() => onChange()}
                   />
                 </div>
               </div>
