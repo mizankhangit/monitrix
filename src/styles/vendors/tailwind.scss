@@ -15,7 +15,7 @@
     @apply border border-secondary bg-secondary  text-white hover:bg-primary hover:border-primary hover:text-white transition-all;
   }
   .btn-white {
-    @apply border border-primary bg-white  text-primary transition-all;
+    @apply border border-[#eaeaea] hover:border-primary bg-white  text-primary transition-all;
   }
   .btn-grey {
     @apply border border-[#ebebed] bg-grey  text-white hover:border-[#d3d3d3] hover:bg-[#71849e] transition-all;

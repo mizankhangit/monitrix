@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "type": "Response Code",
+    "comparison": "Not equal to",
+    "limit": "200",
+    "condition": "If occurs 5 times",
+    "status": "Active"
+  },
+  {
+    "id": 1,
+    "type": "Load Time",
+    "comparison": "Not equal to",
+    "limit": "200",
+    "condition": "If occurs 5 times",
+    "status": "Active"
+  },
+  {
+    "id": 1,
+    "type": "Search string missing",
+    "comparison": "Not equal to",
+    "limit": "400",
+    "condition": "If occurs 5 times",
+    "status": "Active"
+  },
+  {
+    "id": 1,
+    "type": "Response Code",
+    "comparison": "Not equal to",
+    "limit": "200",
+    "condition": "If occurs 5 times",
+    "status": "Active"
+  }
+]

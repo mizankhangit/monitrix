@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "iconSrc": "/images/email.png",
+    "alt": "Email",
+    "title": "Email",
+    "shortDescription": "E-mail is a basic form of outages notifications. Get alerted!"
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-twitter.svg",
+    "alt": "Twitter",
+    "title": "Twitter",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-slack.svg",
+    "alt": "Slack",
+    "title": "Slack",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-zapier.svg",
+    "alt": "Zapier",
+    "title": "Zapier",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-pagerduty.png",
+    "alt": "PagerDuty",
+    "title": "PagerDuty",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-telegram.svg",
+    "alt": "Telegram",
+    "title": "Telegram",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "/images/twilio.png",
+    "alt": "twilio",
+    "title": "Twilio",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "https://uptimerobot.com/assets/images/integration-pushover.svg",
+    "alt": "Pushover",
+    "title": "Pushover",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "/images/web-hook.png",
+    "alt": "Webhook",
+    "title": "Webhook",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "/images/pabbly.svg",
+    "alt": "Pabbly",
+    "title": "Pabbly",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  },
+  {
+    "id": 2,
+    "iconSrc": "/images/ifttt.svg",
+    "alt": "IFTTT",
+    "title": "IFTTT",
+    "shortDescription": "Let us send you a private message on Twitter about your outages."
+  }
+]

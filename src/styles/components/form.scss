@@ -18,3 +18,10 @@ input::placeholder {
   transform: translateY(-50%);
   right: 15px;
 }
+
+.custom_switch {
+  background: rgba(54, 74, 99, 0.25) !important;
+  &.ant-switch-checked {
+    background: #0b3a5d !important;
+  }
+}
