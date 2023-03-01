@@ -6,7 +6,6 @@ import { ConfigProvider } from "antd";
 import AppRouter from "./router";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-
 import "antd/dist/reset.css";
 import "./styles/main.scss";
 
